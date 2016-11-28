@@ -29,10 +29,6 @@ menu:
       - title: 'Sample Post'
         url: '/intro/sample-post/'
 
-# Social networking links used in author block underneath posts. Update and remove as you like.
-social:
-  - title: "github"
-    url: "https://github.com/asgranty"
 # Background image to be tiled on all pages
 background:
 
@@ -43,7 +39,7 @@ google_verify:
 bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/Paris
 locale:      en_US
 future:      true
 highlighter: rouge
