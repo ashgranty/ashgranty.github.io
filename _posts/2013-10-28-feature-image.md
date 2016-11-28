@@ -13,5 +13,3 @@ code
 
 
 <!-- more -->
-
-Post content after ``<!-- more -->`` tag.
