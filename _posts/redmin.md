@@ -1,0 +1,39 @@
+---
+layout: post
+title: RedMine
+description: "Gestion de projets"
+tags: [réseau, gestion, projet]
+
+---
+
+Text
+{% highlight yaml %}
+sudo apt-get install ruby-full
+sudo apt-get install ruby-dev
+sudo apt-get install gcc
+sudo apt-get install libpq-dev
+sudo apt-get install libmysqlclient-dev
+sudo wget http://www.redmine.org/releases/redmine-3.3.1.tar.gz
+sudo tar -xzvf redmine-3.3.1.tar.gz
+{% endhighlight %}
+
+{% highlight yaml %}
+mysql -u root -p
+{% endhighlight %}
+
+{% highlight yaml %}
+sudo cp redmine-3.3.1/config/database.yml.example redmine-3.3.1/config/database.yml
+sudo vim redmine-3.3.1/config/database.yml
+cd redmine-3.3.1/
+sudo gem install bundler
+bundle install --without development test rmagick
+bundle exec rake generate_secret_token
+RAILS_ENV=production bundle exec rake db:migrate
+RAILS_ENV=production REDMINE_LANG=fr bundle exec rake redmine:load_default_data
+sudo mkdir -p tmp tmp/pdf public/plugin_assets
+sudo chmod -R 755 files log tmp public/plugin_assets
+bundle exec rails server webrick -e production
+{% endhighlight %}
+
+
+<!-- more -->
