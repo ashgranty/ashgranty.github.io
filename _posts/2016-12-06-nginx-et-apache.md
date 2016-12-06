@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RedMine 3.3.1
+title: Nginx
 description: "Serveur Web"
 tags: [réseau, serveur, web, apache, nginx]
 ---
