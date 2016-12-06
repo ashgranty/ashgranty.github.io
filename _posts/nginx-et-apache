@@ -1,0 +1,25 @@
+---
+layout: post
+title: RedMine 3.3.1
+description: "Serveur Web"
+tags: [réseau, serveur, web, apache, nginx]
+---
+
+Coupler Nginx (front-end) à Apache 2.4 (back-end)
+
+> Prérequis :
+
+> - Debian Jessie
+> - Apache2
+
+```lua
+sudo apt-get install gcc
+sudo apt-get install libpq-dev
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install rubygems-integration
+```
+
+
+
+
+<!-- more -->
