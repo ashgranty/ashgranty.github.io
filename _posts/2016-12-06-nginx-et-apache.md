@@ -13,6 +13,8 @@ Coupler Nginx (front-end) à Apache 2.4 (back-end)
 > - Apache2
 
 Modification du port d'écoute de Apache :
+
+```lua
 sudo vim /etc/apache2/ports.conf
 
 Listen 8080
@@ -24,12 +26,16 @@ Listen 8080
 <IfModule mod_gnutls.c>
         Listen 443
 </IfModule>
-
+```
 
 Modifier les VirtualHost :
+```lua
 sudo vim /etc/apache2/sites-available/000-default.conf
+```
 
 Téléchargemebt de Nginx :
+
+```lua
 sudo vim /etc/apt/sources.list
 deb http://packages.dotdeb.org jessie all
 deb http://nginx.org/packages/mainline/debian/ jessie nginx
@@ -45,13 +51,15 @@ sudo apt-get update
 
 
 sudo apt-get install nginx
-
+```
 
 
 
 
 Configuration de Nginx
 Fichier proxi :
+
+```lua
 sudo vim /etc/nginx/conf.d/proxy.conf
 
 proxy_redirect          off;
@@ -66,7 +74,7 @@ proxy_read_timeout      90;
 proxy_buffer_size   16k;
 proxy_buffers       32   16k;
 proxy_busy_buffers_size 64k;
-
+```
 
 EN COURS
 
