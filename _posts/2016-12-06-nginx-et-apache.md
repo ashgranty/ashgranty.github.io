@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nginx
+title: Nginx et Apache
 description: "Serveur Web"
 tags: [réseau, serveur, web, apache, nginx]
 ---
