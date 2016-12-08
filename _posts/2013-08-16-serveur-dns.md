@@ -60,7 +60,7 @@ Afin de pouvoir réaliser la résolution inverse nous créons un fichier par zon
 ```lua
 vim /etc/bind/db.192.168.0
 
-@ IN SOA ns.mon_domaine.fr. julien.mon_domaine.fr. (
+@ IN SOA ns.mon_domaine.fr. nom.mon_domaine.fr. (
 2009110701
 24H
 2H
@@ -78,7 +78,7 @@ XX	IN	PTR	machine3.mon_domaine.fr.
 ```lua
 vim /etc/bind/db.10.0.0
 
-@ IN SOA ns.mon_domaine.fr. julien.mon_domaine.fr. (
+@ IN SOA ns.mon_domaine.fr. nom.mon_domaine.fr. (
 2009110701
 24H
 2H
