@@ -64,6 +64,27 @@ apt-get install fail2ban
 
 
 
+"
+1.Etape Installation Apache :
+
+Problèmes avec libapache2-mod-suphp libapache2-mod-ruby. (non trouvées) – j’ai du les virer pour que ça passe.
+
+2. FTP / Quota
+le fichier FSTab ne contient que : # UNCONFIGURED FSTAB FOR BASE SYSTEM
+il faut donc le remplir avec les partitions.
+
+3. Installation Jailkit
+– pas de package automake1.9 – installer automake donc comme suit :
+
+apt-get install build-essential autoconf automake libtool flex bison debhelper
+
+pour jailkit, on peut télécharger la dernière version (2.17) :
+wget http://olivier.sessink.nl/jailkit/jailkit-2.17.tar.gz
+
+Voilà pour les retours, un peu plus précis.
+"
+
+
 
 Téléchargement de ISPConfig :
 
