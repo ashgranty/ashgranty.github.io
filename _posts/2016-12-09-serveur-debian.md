@@ -12,5 +12,9 @@ http://ftp.nl.debian.org/debian/dists/jessie/main/installer-amd64/current/images
 ```
 
 Partitionning method:
+
+```lua
 Guided - use entire disk
+Separate /home, /var ans /tmp partitions
+```
 
