@@ -15,6 +15,6 @@ Partitionning method:
 
 ```lua
 Guided - use entire disk
-Separate /home, /var ans /tmp partitions
+Separate /home, /var and /tmp partitions
 ```
 
