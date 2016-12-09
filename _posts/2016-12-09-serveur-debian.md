@@ -30,6 +30,12 @@ adduser debian sudo
 su debian
 ```
 
+Installer vim :
+
+```lua
+sudo apt-get install vim
+```
+
 ```lua
 sudo apt-get update
 sudo apt-get upgrade
