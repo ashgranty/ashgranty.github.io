@@ -502,10 +502,10 @@ Il ne reste alors plus qu’à redémarrer le service.
 
 Téléchargement de ISPConfig :
 
-<div class="highlight highlight-source-lua">
+```lua
 sudo wget https://sourceforge.net/projects/ispconfig/files/ISPConfig%203/ISPConfig-3.1.1p1/ISPConfig-3.1.1p1.tar.gz
 sudo tar -xvzf ISPConfig-3.1.1p1.tar.gz
-</div>
+```
 
 ```lua
 cd ispconfig3_install/install/
