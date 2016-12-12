@@ -286,6 +286,12 @@ sudo quotacheck -avugm
 sudo quotaon -avug
 ```
 
+"
+1. FTP / Quota
+le fichier FSTab ne contient que : # UNCONFIGURED FSTAB FOR BASE SYSTEM
+il faut donc le remplir avec les partitions.
+"
+
 Installation de BIND DNS Server
 
 ```lua
@@ -331,13 +337,168 @@ Installation de fail2ban
 apt-get install fail2ban
 ```
 
+On va configurer le service pour monitorer automatiquement PureFTPd, SASL, et Courier. On commence par le fichier de configuration global:
 
+```lua
+vi /etc/fail2ban/jail.local
+[pureftpd]
 
-"
-1. FTP / Quota
-le fichier FSTab ne contient que : # UNCONFIGURED FSTAB FOR BASE SYSTEM
-il faut donc le remplir avec les partitions.
-"
+enabled = true
+port = ftp
+filter = pureftpd
+logpath = /var/log/syslog
+maxretry = 3
+[sasl]
+
+enabled = true
+port = smtp
+filter = sasl
+logpath = /var/log/mail.log
+maxretry = 5
+[courierpop3]
+
+enabled = true
+port = pop3
+filter = courierpop3
+logpath = /var/log/mail.log
+maxretry = 5
+[courierpop3s]
+
+enabled = true
+port = pop3s
+filter = courierpop3s
+logpath = /var/log/mail.log
+maxretry = 5
+[courierimap]
+
+enabled = true
+port = imap2
+filter = courierimap
+logpath = /var/log/mail.log
+maxretry = 5
+[courierimaps]
+
+enabled = true
+port = imaps
+filter = courierimaps
+logpath = /var/log/mail.log
+maxretry = 5
+```
+
+Puis on crée les fichiers de filtre associés comme suit:
+
+```lua
+vi /etc/fail2ban/filter.d/pureftpd.conf
+[Definition]
+failregex = .*pure-ftpd: \(.*@<HOST>\) \[WARNING\] Authentication failed for user.*
+ignoreregex =
+```
+
+```lua
+vi /etc/fail2ban/filter.d/courierpop3.conf
+# Fail2Ban configuration file
+#
+# $Revision: 100 $
+#
+
+[Definition]
+
+# Option: failregex
+# Notes.: regex to match the password failures messages in the logfile. The
+# host must be matched by a group named « host ». The tag « <HOST> » can
+# be used for standard IP/hostname matching and is only an alias for
+# (?:::f{4,6}:)?(?P<host>\S+)
+# Values: TEXT
+#
+failregex = pop3d: LOGIN FAILED.*ip=\[.*:<HOST>\]
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+ignoreregex =
+```
+
+```lua
+vi /etc/fail2ban/filter.d/courierpop3s.conf
+# Fail2Ban configuration file
+#
+# $Revision: 100 $
+#
+
+[Definition]
+
+# Option: failregex
+# Notes.: regex to match the password failures messages in the logfile. The
+# host must be matched by a group named « host ». The tag « <HOST> » can
+# be used for standard IP/hostname matching and is only an alias for
+# (?:::f{4,6}:)?(?P<host>\S+)
+# Values: TEXT
+#
+failregex = pop3d-ssl: LOGIN FAILED.*ip=\[.*:<HOST>\]
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+ignoreregex =
+```
+
+```lua
+vi /etc/fail2ban/filter.d/courierimap.conf
+# Fail2Ban configuration file
+#
+# $Revision: 100 $
+#
+
+[Definition]
+
+# Option: failregex
+# Notes.: regex to match the password failures messages in the logfile. The
+# host must be matched by a group named « host ». The tag « <HOST> » can
+# be used for standard IP/hostname matching and is only an alias for
+# (?:::f{4,6}:)?(?P<host>\S+)
+# Values: TEXT
+#
+failregex = imapd: LOGIN FAILED.*ip=\[.*:<HOST>\]
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+ignoreregex =
+```
+
+```lua
+vi /etc/fail2ban/filter.d/courierimaps.conf
+# Fail2Ban configuration file
+#
+# $Revision: 100 $
+#
+
+[Definition]
+
+# Option: failregex
+# Notes.: regex to match the password failures messages in the logfile. The
+# host must be matched by a group named « host ». The tag « <HOST> » can
+# be used for standard IP/hostname matching and is only an alias for
+# (?:::f{4,6}:)?(?P<host>\S+)
+# Values: TEXT
+#
+failregex = imapd-ssl: LOGIN FAILED.*ip=\[.*:<HOST>\]
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+ignoreregex =
+```
+
+Il ne reste alors plus qu’à redémarrer le service.
+
+```lua
+/etc/init.d/fail2ban restart
+```
 
 Téléchargement de ISPConfig :
 
