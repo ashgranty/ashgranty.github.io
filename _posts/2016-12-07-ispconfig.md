@@ -99,21 +99,21 @@ On commence par supprimer les certificats présents:
 
 ```lua
 cd /etc/courier
-rm -f /etc/courier/imapd.pem
-rm -f /etc/courier/pop3d.pem
+sudo rm -f /etc/courier/imapd.pem
+sudo rm -f /etc/courier/pop3d.pem
 ```
 
 On modifie ensuite les deux fichiers imapd.cnf et pop3d.cnf en remplacant le paramètre CN=localhost par CN=nomdeserver.exemple.com
 
 ```lua
-vi /etc/courier/imapd.cnf
+sudo vim /etc/courier/imapd.cnf
 […]
 CN=server1.example.com
 […]
 ```
 
 ```lua
-vi /etc/courier/pop3d.cnf
+sudo vim /etc/courier/pop3d.cnf
 
 […]
 CN=server1.example.com
@@ -123,15 +123,15 @@ CN=server1.example.com
 Puis on recrée les certificats :
 
 ```lua
-mkimapdcert
-mkpop3dcert
+sudo mkimapdcert
+sudo mkpop3dcert
 ```
 
 Il ne reste plus qu’à redémarrer le serveur courier :
 
 ```lua
-/etc/init.d/courier-imap-ssl restart
-/etc/init.d/courier-pop-ssl restart
+sudo /etc/init.d/courier-imap-ssl restart
+sudo /etc/init.d/courier-pop-ssl restart
 ```
 
 Installation de Amavisd-new, SpamAssassin, And Clamav
@@ -139,7 +139,7 @@ Installation de Amavisd-new, SpamAssassin, And Clamav
 Suit l’installation de l’antispam et antivirus, plus leur dépendances, que l’on lancera avec la commande suivante :
 
 ```lua
-apt-get install amavisd-new spamassassin clamav clamav-daemon zoo unzip bzip2 arj nomarch lzop cabextract apt-listchanges libnet-ldap-perl libauthen-sasl-perl clamav-docs daemon libio-string-perl libio-socket-ssl-perl libnet-ident-perl zip libnet-dns-perl
+sudo apt-get install amavisd-new spamassassin clamav clamav-daemon zoo unzip bzip2 arj nomarch lzop cabextract apt-listchanges libnet-ldap-perl libauthen-sasl-perl clamav-docs daemon libio-string-perl libio-socket-ssl-perl libnet-ident-perl zip libnet-dns-perl
 ```
 
 Nous pouvons stopper le processus spamassassin et le supprimer du script de démarrage automatique car ISPConfig a sa propre façon de le lancer via amavisd.
@@ -185,7 +185,7 @@ Deux vérifications sont à effectuer dans le fichier pure-ftpd-common
 
 
 ```lua
-vi /etc/default/pure-ftpd-common
+sudo vim /etc/default/pure-ftpd-common
 
 […]
 STANDALONE_OR_INETD=standalone
@@ -197,7 +197,7 @@ VIRTUALCHROOT=true
 On peut également vérifier que Inetd ne démarre pas ftp en controlant le fichier inetd.conf :
 
 ```lua
-vi /etc/inetd.conf
+sudo vim /etc/inetd.conf
 
 […]
 #:STANDARD: These are standard services.
@@ -208,16 +208,16 @@ vi /etc/inetd.conf
 Il vous faut alors redémarrer le service.
 
 ```lua
-/etc/init.d/openbsd-inetd restart
+sudo /etc/init.d/openbsd-inetd restart
 ```
 
 Il est maintenant important de configurer notre serveur FTP de manière à utiliser l’authentification TLS. Sans l’utilisation de ce protocole, les noms d’utilisateurs et mot de passe sont transférés en clair lors des communications FTP, ce qui rend le protocole bien peu sécuritaire. L’utilisation de l’encryptage permet de palier grandement à cette lacune.
 
 ```lua
-sudo echo 1 &gt; /etc/pure-ftpd/conf/TLS
+sudo bash -c 'echo 1 > /etc/pure-ftpd/conf/TLS'
 ```
 
-La commande précédente active le protocole TLS. (On crée un fichier nommé TLS dans le répertoire /etc/pure-ftpd/conf . Ce fichier ne contient que la valeur 1.
+La commande précédente active le protocole TLS. (On crée un fichier nommé TLS dans le répertoire /etc/pure-ftpd/conf . Ce fichier ne contient que la valeur 1).
 Il nous faut toutefois créer un certificat SSL pour pouvoir utiliser TLS. Nous créons celui-ci dans le répertoire /etc/ssl/private/ Nous utilisons la commande openssl pour créer notre certificat.
 
 ```lua
@@ -247,7 +247,7 @@ sudo /etc/init.d/pure-ftpd-mysql restart
 Pour activer le système de quota, il est nécessaire de modifier le fichier /etc/fstab. Sans rentrer dans le détail, il est nécessaire d’ajouter le code ,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 sur toutes les partitions ou les utilisateurs peuvent potentiellement avoir accès. Si vous n’avez pas partitionné votre disque, il suffit d’ajouter ce code sur la ligne de votre partition de montage (à savoir / )
 
 ```lua
-vi /etc/fstab
+sudo vim /etc/fstab
 
 # /etc/fstab: static file system information.
 
@@ -286,12 +286,6 @@ sudo quotacheck -avugm
 sudo quotaon -avug
 ```
 
-"
-1. FTP / Quota
-le fichier FSTab ne contient que : # UNCONFIGURED FSTAB FOR BASE SYSTEM
-il faut donc le remplir avec les partitions.
-"
-
 Installation de BIND DNS Server
 
 ```lua
@@ -307,7 +301,7 @@ sudo apt-get install vlogger webalizer awstats geoip-database
 Modifiez le fichier /etc/cron.d/awstats
 
 ```lua
-vi /etc/cron.d/awstats
+sudo vim /etc/cron.d/awstats
 
 #*/10 * * * * www-data [ -x /usr/share/awstats/tools/update.sh ] && /usr/share/awstats/tools/update.sh
 # Generate static reports:
@@ -318,18 +312,17 @@ Installation de Jailkit
 
 ```lua
 sudo apt-get install build-essential autoconf automake libtool flex bison debhelper
-sudo wget http://olivier.sessink.nl/jailkit/jailkit-2.19.tar.gz
 ```
 
 ```lua
 cd /tmp
-wget http://olivier.sessink.nl/jailkit/jailkit-2.13.tar.gz
-tar xvfz jailkit-2.13.tar.gz
-cd jailkit-2.13
-./debian/rules binary
+sudo wget http://olivier.sessink.nl/jailkit/jailkit-2.19.tar.gz
+sudo tar -xvfz jailkit-2.19.tar.gz
+cd jailkit-2.19
+sudo ./debian/rules binary
 cd ..
-dpkg -i jailkit_2.13-1_*.deb
-rm -rf jailkit-2.13*
+sudo dpkg -i jailkit_2.19-1_*.deb
+sudo rm -rf jailkit-2.19*
 ```
 Installation de fail2ban
 
