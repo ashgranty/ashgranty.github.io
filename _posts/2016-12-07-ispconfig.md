@@ -97,4 +97,6 @@ cd ispconfig3_install/install/
 sudo php -q install.php
 ```
 
+http://nomdeserver.votrenomdedomaine.com:8080
+
 en cours
