@@ -502,10 +502,10 @@ Il ne reste alors plus qu’à redémarrer le service.
 
 Téléchargement de ISPConfig :
 
-```lua
+<div class="highlight highlight-source-lua">
 sudo wget https://sourceforge.net/projects/ispconfig/files/ISPConfig%203/ISPConfig-3.1.1p1/ISPConfig-3.1.1p1.tar.gz
 sudo tar -xvzf ISPConfig-3.1.1p1.tar.gz
-```
+</div>
 
 ```lua
 cd ispconfig3_install/install/
@@ -515,6 +515,4 @@ sudo php -q install.php
 http://nomdeserver.votrenomdedomaine.com:8080
 
 
-<div class="highlight highlight-source-lua">
 en cours
-</div>
