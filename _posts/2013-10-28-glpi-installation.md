@@ -31,4 +31,10 @@ mysql> grant all privileges on glpi.* to glpi@localhost identified by 'glpi';
 mysql> quit;
 ```
 
+```lua
+sudo /etc/init.d/apache2 restart
+```
+
 localhost/glpi
+
+glpi/glpi
