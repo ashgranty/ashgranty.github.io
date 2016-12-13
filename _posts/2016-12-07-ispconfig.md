@@ -510,6 +510,11 @@ http://nomdeserver.votrenomdedomaine.com:8080
 
 ------------------------
 test avec le minima : 
+
+```lua
 sudo apt-get install apache2 mysql-server php5 php5-mysql
 sudo wget -–no-check-certificate https://sourceforge.net/projects/ispconfig/files/ISPConfig%203/ISPConfig-3.1.1p1/ISPConfig-3.1.1p1.tar.gz
------------------------
+sudo tar -xvzf ISPConfig-3.1.1p1.tar.gz
+cd ispconfig3_install/install/
+sudo php -q install.php
+```
