@@ -35,23 +35,24 @@ sudo hostname nouveau_nom
 
 Si vous vous déconnectez de la machine et vous y reconnectez, vous devriez voir nom_utilisateur@nouveau_nom au début de chaque ligne du terminal.
 
-Parmi les autres vérifications importantes à faire avant l’installation d’ISPConfig, il convient de s’assurer que bash est le shell par défaut. ISPConfig, ne supporte pas encore dash et c’est pour cela que cette modification est nécessaire. On l’effectuera par la commande suivante:
-
-```lua
-sudo dpkg-reconfigure dash
-Use dash as the default system shell (/bin/sh)? <– No
-```
-
+Parmi les autres vérifications à faire avant l’installation d’ISPConfig, il convient de s’assurer que bash est le shell par défaut. ISPConfig, ne supporte pas encore dash et c’est pour cela que cette modification est nécessaire. 
 La vérification du shell par défaut se fait de la façon suivante:
 
 ```lua
 sudo echo $SHELL
 ```
 
-doit retourner
+doit retourner :
 
 ```lua
 /bin/bash
+```
+
+Sinon :
+
+```lua
+sudo dpkg-reconfigure dash
+Use dash as the default system shell (/bin/sh)? <– No
 ```
 
 Installation de Postfix, Courier, Saslauthd, MySQL, rkhunter, binutils
@@ -291,7 +292,7 @@ Installation de BIND DNS Server
 sudo apt-get install bind9 dnsutils
 ```
 
-Installation de Vlogger, Webalizer, And AWstats
+Installation de Vlogger, Webalizer, et AWstats
 
 ```lua
 sudo apt-get install vlogger webalizer awstats geoip-database
