@@ -11,14 +11,15 @@ tags: [ticketing, glpi]
 > sudo apt-get install apache2 php5 libapache2-mod-php5
 > sudo apt-get install php5-imap php5-ldap php5-curl
 > sudo apt-get install mysql-server php5-mysql
+> sudo apt-get install php5-gd
 
 Télécharger et installer GLPI :
 
 ```lua
 sudo wget https://github.com/glpi-project/glpi/releases/download/9.1.1/glpi-9.1.1.tgz
 sudo tar -xvzf glpi-9.1.1.tgz
-cp glpi/ /var/www/
-sudo chown /var/www/glpi
+sudo cp -R glpi/ /var/www/
+sudo chown -R www-data:www-data /var/www/glpi
 sudo /etc/init.d/apache2 restart
 ```
 
