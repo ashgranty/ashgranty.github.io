@@ -8,7 +8,6 @@ tags: [ticketing, glpi]
 > Prérequis :
 
 > - Apache2
-
 > - MySQL
 
 ```lua
