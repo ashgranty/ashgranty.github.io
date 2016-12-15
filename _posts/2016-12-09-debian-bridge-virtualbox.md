@@ -1,12 +1,14 @@
 ---
 layout: post
-title: Serveur de test sous virtualbox
+title: Serveur de test sous virtualbox - le réseau bridge
 description: "Debian server"
-tags: [debian, serveur, test, virtualbox]
+tags: [debian, serveur, test, virtualbox, réseau, bridge]
 ---
 
-Prérequis :
-> Une debian fraîchement installée
+> Prérequis :
+
+> - Une debian fraîchement installée
+> - VirtualBox installé
 
 Virtualbox et les instantanés.
 
