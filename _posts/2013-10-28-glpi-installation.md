@@ -7,6 +7,7 @@ tags: [ticketing, glpi]
 
 > Prérequis :
 
+> - Débian Jessie
 > - Apache2
 > - MySQL
 
