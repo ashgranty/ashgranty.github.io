@@ -14,7 +14,7 @@ https://www.debian.org/distrib/
 
 Télécharger une archive : 
 
-```
+```lua
 http://ftp.nl.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/mini.iso
 ```
 
