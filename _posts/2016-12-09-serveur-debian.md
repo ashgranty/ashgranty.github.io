@@ -7,9 +7,9 @@ tags: [serveur, Debian]
 
 > Prérequis :
 
-> ``
+> ```
 https://www.debian.org/distrib/
-``
+```
 
 
 Télécharger une archive : 
