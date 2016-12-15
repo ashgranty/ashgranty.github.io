@@ -7,8 +7,8 @@ tags: [ticketing, glpi, restauration]
 
 > Prérequis :
 
-> Serveur Debian
-> Nouvelle instalaltion GLPI
+> - Serveur Debian
+> - Nouvelle instalaltion GLPI
 
 ```lua
 sudo cp base_glpi_sauvegardée /var/www/glpi/files/_dump/
