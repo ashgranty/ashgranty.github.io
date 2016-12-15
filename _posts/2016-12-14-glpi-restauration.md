@@ -6,7 +6,8 @@ tags: [ticketing, glpi, restauration]
 ---
 
 > Prérequis :
-> Serveur Débian
+
+> Serveur Debian
 > Nouvelle instalaltion GLPI
 
 ```lua
