@@ -50,6 +50,6 @@ EN COURS
 Lancer l'installation :
 
 ```lua
-sudo /var/www/OCSInventory-Server-2.3/setup.sh
+sudo /var/www/ocsinventory/setup.sh
 ```
 
