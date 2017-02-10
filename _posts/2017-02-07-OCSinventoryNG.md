@@ -46,13 +46,6 @@ sudo make install
 
 EN COURS 
 
-sudo wget http://www.cpan.org/authors/id/R/RK/RKOBES/Apache2-SOAP-0.73.tar.gz
-sudo tar -xvzf Apache2-SOAP-0.73.tar.gz
-sudo perl Makefile.PL
-sudo make
-sudo make install
-
-
 
 Lancer l'installation :
 
