@@ -9,8 +9,8 @@ catégories: [serveur, réseau, administration]
 Télécharger l'archive :
 
 ```lua
-sudo wget https://github.com/OCSInventory-NG/OCSInventory-Server/archive/2.3.tar.gz
-suo mv OCSInventory-Server-2.3/ /var/www/
+sudo wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.3/OCSNG_UNIX_SERVER-2.3.tar.gz
+suo mv OCSNG_UNIX_SERVER-2.3/ /var/www/ocsinventory
 ```
 
 Installer les paquets suivants :
@@ -25,8 +25,8 @@ sudo apt-get install libxml-simple-perl libdbi-perl libdbd-mysql-perl libapache-
 sudo apt-get install libarchive-zip-perl
 sudo apt-get install libsoap-lite-perl
 sudo apt-get install php5-dev
+sudo apt-get install libio-compress-perl
 ```
-libcompress-zlib-perl --> libio-compress-perl
 
 ```lua
 sudo wget http://www.cpan.org/authors/id/P/PH/PHRED/Apache-DBI-1.12.tar.gz
