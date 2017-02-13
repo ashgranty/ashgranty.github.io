@@ -41,6 +41,6 @@ mysql> quit;
 sudo /etc/init.d/apache2 restart
 ```
 
-localhost/glpi
+localhost/root/mdp-mysql
 
 glpi/glpi
