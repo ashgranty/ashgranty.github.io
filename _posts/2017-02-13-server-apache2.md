@@ -8,7 +8,6 @@ tags: [apache2, server]
 
 ```lua
 debian@debian:~$ sudo apt-get install apache2
-[sudo] password for debian:
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
