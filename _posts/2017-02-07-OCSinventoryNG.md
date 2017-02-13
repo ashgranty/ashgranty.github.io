@@ -50,7 +50,8 @@ sudo make install
 Lancer l'installation :
 
 ```lua
-sudo /var/www/ocsinventory/setup.sh
+cd /var/www/ocsinventory/
+sudo ./setup.sh
 ```
 
 EN COURS
