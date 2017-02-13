@@ -54,3 +54,7 @@ Need to get 11.0 MB of archives.
 After this operation, 46.2 MB of additional disk space will be used.
 Do you want to continue? [Y/n]
 ```
+
+```lua
+sudo vim /etc/apache2/sites-available/000-default.conf
+```
