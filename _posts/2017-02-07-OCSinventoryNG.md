@@ -45,12 +45,10 @@ sudo make
 sudo make install
 ```
 
-EN COURS 
-
-
 Lancer l'installation :
 
 ```lua
 sudo /var/www/ocsinventory/setup.sh
 ```
 
+EN COURS
