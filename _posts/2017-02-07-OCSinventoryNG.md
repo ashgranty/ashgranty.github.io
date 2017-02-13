@@ -63,4 +63,11 @@ mysql> grant all privileges on ocsweb.* to ocs@localhost identified by 'ocs';
 mysql> quit;
 ```
 
+SECURITY ALERT!
+Your install.php exists in your installation directory.
+The default SQL login/password is activate on your database: ocsweb
+
+```lua
+sudo mv /va
+```
 EN COURS
