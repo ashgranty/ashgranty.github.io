@@ -57,4 +57,5 @@ Do you want to continue? [Y/n]
 
 ```lua
 sudo vim /etc/apache2/sites-available/000-default.conf
+DocumentRoot /var/www
 ```
