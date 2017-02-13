@@ -32,6 +32,7 @@ sudo apt-get install libio-compress-perl
 ```lua
 sudo wget http://www.cpan.org/authors/id/P/PH/PHRED/Apache-DBI-1.12.tar.gz
 sudo tar -xvzf Apache-DBI-1.12.tar.gz
+cd Apache-DBI-1.12
 sudo perl Makefile.PL
 sudo make
 sudo make install
@@ -40,6 +41,7 @@ sudo make install
 ```lua
 sudo wget http://www.cpan.org/authors/id/S/SI/SIXTEASE/XML-Entities-1.0002.tar.gz
 sudo tar -xvzf XML-Entities-1.0002.tar.gz
+cd XML-Entities
 sudo perl Makefile.PL
 sudo make
 sudo make install
