@@ -43,6 +43,12 @@ Installer vim :
 sudo apt-get install vim
 ```
 
+Installer SSH :
+
+```lua
+sudo apt-get install ssh-server
+```
+
 ```lua
 sudo apt-get update
 sudo apt-get upgrade
