@@ -10,7 +10,8 @@ Télécharger l'archive :
 
 ```lua
 sudo wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.3/OCSNG_UNIX_SERVER-2.3.tar.gz
-suo mv OCSNG_UNIX_SERVER-2.3/ /var/www/ocsinventory
+sudo tar -xvzf ...
+sudo mv OCSNG_UNIX_SERVER-2.3/ /var/www/ocsinventory
 ```
 
 Installer les paquets suivants :
