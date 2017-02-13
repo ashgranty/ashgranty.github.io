@@ -54,4 +54,13 @@ cd /var/www/ocsinventory/
 sudo ./setup.sh
 ```
 
+Création de la base MySQL :
+
+```lua
+mysql -u root -p
+mysql> create database ocsweb;
+mysql> grant all privileges on ocsweb.* to ocs@localhost identified by 'ocs';
+mysql> quit;
+```
+
 EN COURS
