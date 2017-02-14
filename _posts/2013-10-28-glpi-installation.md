@@ -21,8 +21,8 @@ sudo apt-get install php5-gd
 Télécharger et installer GLPI :
 
 ```lua
-sudo wget https://github.com/glpi-project/glpi/releases/download/9.1.1/glpi-9.1.1.tgz
-sudo tar -xvzf glpi-9.1.1.tgz
+sudo wget https://github.com/glpi-project/glpi/releases/download/9.1.2/glpi-9.1.2.tgz
+sudo tar -xvzf glpi-9.1.2.tgz
 sudo cp -R glpi/ /var/www/
 sudo chown -R www-data:www-data /var/www/glpi
 sudo /etc/init.d/apache2 restart
