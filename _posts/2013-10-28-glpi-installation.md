@@ -44,3 +44,10 @@ sudo /etc/init.d/apache2 restart
 localhost/root/mdp-mysql
 
 glpi/glpi
+
+```lua
+sudo vim /etc/php5/apache2/php.ini
+date.timezone = Europe/Paris
+
+sudo /etc/init.d/apache2 restart
+```
