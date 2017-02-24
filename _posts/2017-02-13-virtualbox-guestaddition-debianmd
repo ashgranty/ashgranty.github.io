@@ -1,3 +1,11 @@
+---
+layout: post
+title: Debian et les GuestAdditions
+description:
+tags: [VirtualBox, Debian, server]
+---
+
+
 enable the contrib repositories; e.g. for Debian 8, make sure your /etc/apt/sources.list contains something like
 
 ```lua
