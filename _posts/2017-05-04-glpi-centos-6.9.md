@@ -5,3 +5,6 @@ description: "glpi"
 tags: [monitoring, réseau, serveur]
 catégories: [serveur]
 ---
+
+Prérequis :
+CentOS 6.9 avec centreon
